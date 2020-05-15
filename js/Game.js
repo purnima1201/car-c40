@@ -44,6 +44,8 @@ class Game {
     form.hide();
     
     Player.getPlayerInfo();
+    player.getCars();
+
     
     if(allPlayers !== undefined){
       background(rgb(198,135,103));
@@ -93,6 +95,10 @@ class Game {
 
     if(player.distance > 3860){
       gameState = 2;
+      player.rank++;
+      Player.updateCars(player.rank);
+      player.update();
+      console.log(player.distance);
     }
    
     drawSprites();
